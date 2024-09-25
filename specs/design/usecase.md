@@ -10,9 +10,9 @@
 
 ## Histórico de revisões
 
-|    Data    | Versão |      Descrição       |
-| :--------: | :----: | :------------------: |
-| 25/09/2024 |  0.1   | Criação do documento |
+|    Data    | Versão |      Descrição       |                     Autores                     |
+| :--------: | :----: | :------------------: | :---------------------------------------------: |
+| 25/09/2024 |  0.1   | Criação do documento | Lavinia Rodrigues, Rafael Bueno e Raiza Andrade |
 
 ---
 
