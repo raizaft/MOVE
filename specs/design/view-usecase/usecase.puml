@@ -34,7 +34,6 @@ package MOVE+ {
 
     (Personalizar\nPlanos de Treino) as UC19
     (Oferecer\nServiços) as UC20
-    (Oferecer\nDesafios) as UC21
     (Criar\nAnúncios Personalizados) as UC22
 
     usecase "Manter Usuários" as UC12
@@ -55,6 +54,7 @@ User -- UC2
 User -- UC3
 User -- UC4
 User -- UC5
+User -- UC6
 User -- UC7
 User -- UC8
 User -- UC9
@@ -64,7 +64,6 @@ User -- UC23
 
 Professional -- UC19
 Professional -- UC20
-Professional -- UC21
 Professional -- UC22
 
 Admin -- UC12
@@ -75,8 +74,6 @@ Admin -- UC27
 
 UC2 <.. UC16 : <<extends>>
 UC3 <.. UC17 : <<extends>>
-UC7 ..> UC6 : <<include>>
-UC5 ..> UC6 : <<include>>
 UC15 <.. UC28 : <<extends>>
 UC15 <.. UC29 : <<extends>>
 
