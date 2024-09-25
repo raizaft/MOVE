@@ -1,7 +1,3 @@
-# Capa
-
----
-
 <h2>Visão de Casos de Uso</h2>
 
 <h3>MOVE+</h3>
