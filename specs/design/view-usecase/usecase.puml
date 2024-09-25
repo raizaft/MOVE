@@ -1,20 +1,19 @@
-@startuml
-scale 0.8
+@startuml MOVE+
 
 left to right direction
-skinparam packageStyle rectangle
 
+' Atores
 actor "Usuário do Sistema" as u
 actor "Usuário Comun" as User
 actor "Profissional" as Professional
 actor "Administrador" as Admin
 
+' Relacionamentos
 u <|-- User
 User <|-- Professional
 u <|-- Admin
 
-
-rectangle MOVE+ {
+package MOVE+ {
     usecase "Receber Notificações" as UC10
     usecase "Gerenciar Perfil" as UC15
 
@@ -45,8 +44,6 @@ rectangle MOVE+ {
     usecase "Realizar login com google" as UC16
     usecase "Interagir com o Feed" as UC17
 }
-
-
 
 u -- UC10
 u -- UC15
