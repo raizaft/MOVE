@@ -1,0 +1,79 @@
+@startuml
+scale 0.8
+
+left to right direction
+skinparam packageStyle rectangle
+
+actor "Usuário do Sistema" as u
+actor "Usuário Comun" as User
+actor "Profissional" as Professional
+actor "Administrador" as Admin
+
+u <|-- User
+User <|-- Professional
+u <|-- Admin
+
+
+rectangle MOVE+ {
+    usecase "Receber Notificações" as UC10
+    usecase "Gerenciar Perfil" as UC15
+
+    usecase "Realizar Login" as UC2
+    usecase "Criar Conta" as UC1
+    usecase "Realizar login com google" as UC16
+    usecase "Acessar Feed de Atualizações" as UC3
+    usecase "Interagir com o Feed" as UC17
+    usecase "Enviar Mensagens" as UC8
+    usecase "Visualizar Plano de Treino" as UC4
+    usecase "Manter Atividades" as UC5
+    usecase "Acompanhar Progresso" as UC6
+    usecase "Participar de Desafios" as UC7
+    usecase "Criar Comunidades" as UC9
+    usecase "Participar de Comunidades" as UC18
+    usecase "Avaliar Profissional" as UC11
+    usecase "Criar\nEventos" as UC23
+
+    (Personalizar\nPlanos de Treino) as UC19
+    (Oferecer\nServiços) as UC20
+    (Oferecer\nDesafios) as UC21
+    (Criar\nAnúncios Personalizados) as UC22
+
+    usecase "Gerenciar Usuários" as UC12
+    usecase "Gerenciar Conteúdos" as UC13
+    usecase "Gerenciar Anúncios" as UC14
+    (Configurar\nPermissões) as UC24
+    (Enviar\nNotificações) as UC27
+}
+
+
+u -- UC10
+u -- UC15
+
+User -- UC1
+User -- UC2
+User -- UC3
+User -- UC4
+User -- UC5
+User -- UC6
+User -- UC7
+User -- UC8
+User -- UC9
+User -- UC11
+User -- UC18
+User -- UC23
+
+UC16 <.. UC2 : <<extends>>
+UC17 <.. UC3 : <<extends>>
+UC18 <.. UC9 : <<extends>>
+
+Professional -- UC19
+Professional -- UC20
+Professional -- UC21
+Professional -- UC22
+
+Admin -- UC12
+Admin -- UC13
+Admin -- UC14
+Admin -- UC24
+Admin -- UC27
+@enduml
