@@ -20,9 +20,7 @@ rectangle MOVE+ {
 
     usecase "Realizar Login" as UC2
     usecase "Criar Conta" as UC1
-    usecase "Realizar login com google" as UC16
     usecase "Acessar Feed de Atualizações" as UC3
-    usecase "Interagir com o Feed" as UC17
     usecase "Enviar Mensagens" as UC8
     usecase "Visualizar Plano de Treino" as UC4
     usecase "Manter Atividades" as UC5
@@ -43,7 +41,11 @@ rectangle MOVE+ {
     usecase "Gerenciar Anúncios" as UC14
     (Configurar\nPermissões) as UC24
     (Enviar\nNotificações) as UC27
+
+    usecase "Realizar login com google" as UC16
+    usecase "Interagir com o Feed" as UC17
 }
+
 
 
 u -- UC10
@@ -64,7 +66,6 @@ User -- UC23
 
 UC16 <.. UC2 : <<extends>>
 UC17 <.. UC3 : <<extends>>
-UC18 <.. UC9 : <<extends>>
 
 Professional -- UC19
 Professional -- UC20
