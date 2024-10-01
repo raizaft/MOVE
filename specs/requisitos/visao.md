@@ -135,3 +135,48 @@ O MOVE+ pode ser acessado por meio de dispositivos móveis que possuam acesso à
 A interação entre os dispositivos ocorre por meio de uma conexão de rede, geralmente a Internet. O servidor que hospeda o MOVE+ se comunica com os dispositivos dos usuários por meio de solicitações HTTP e respostas, permitindo que o sistema exiba informações e interaja de forma eficiente e fluida com o usuário.
 
 Uma estrutura operacional do produto é apresentada na Figura 1.
+
+![Arquitetura](arquitetura.jpeg)
+
+# Custo e Venda
+
+## Desenvolvimento de Software
+- **Equipe de Desenvolvimento:** R$ 300.000,00
+- **Infraestrutura Inicial:** R$ 50.000,00
+- **Licenciamento e Ferramentas:** R$ 20.000,00
+- **Total do Desenvolvimento:** R$ 370.000,00
+
+## Assinatura de Suporte Técnico e Manutenção
+- **Custo Mensal de Suporte:** R$ 10.000,00 (aumento devido a suporte técnico mais abrangente e melhor atendimento)
+
+## Infraestrutura Operacional
+- **Custo Mensal de Infraestrutura (servidores, banco de dados, etc.):** R$ 5.000,00 (aumento devido à necessidade de uma infraestrutura mais robusta)
+- **Total Mensal de Suporte e Infraestrutura:** R$ 15.000,00
+
+## Licenciamento e Instalação
+O MOVE+ será licenciado para a cliente Maria Flor, permitindo sua instalação em servidores próprios ou na nuvem, conforme os requisitos técnicos. A instalação será de responsabilidade da equipe de desenvolvimento, que realizará a configuração dos servidores e da base de dados.
+
+A equipe técnica fornecerá login e senha para acesso ao sistema após a instalação, garantindo que o MOVE+ esteja pronto para uso com todas as funcionalidades.
+
+## Características e Funcionalidades de Alto Nível
+Esta seção define e descreve as características do MOVE+. Trata-se dos requisitos de alto nível do sistema que são necessários para propiciar benefícios aos usuários.
+
+- O sistema deve permitir que usuários criem perfis personalizados, incluindo informações como objetivos de saúde, histórico de atividades e preferências pessoais.
+- O sistema deve permitir o cadastro de usuários e profissionais especializados, incluindo informações detalhadas sobre suas especialidades, áreas de atuação e interesses.
+- O sistema deve oferecer a opção de adicionar fotos, treinos favoritos e metas pessoais no perfil.
+- O sistema deve facilitar a criação e participação em grupos de interesse, como comunidades de corredores, praticantes de yoga ou entusiastas de musculação.
+- O sistema deve permitir a interação dentro dos grupos por meio de fóruns, chats e compartilhamento de conteúdo.
+- O sistema deve permitir que usuários registrem e compartilhem suas rotinas de treinos, incluindo tipos de exercícios, duração e intensidade.
+- O sistema deve oferecer a possibilidade de criar e compartilhar relatórios de progresso e conquistas com outros usuários.
+- O sistema deve disponibilizar um feed de atualizações com artigos, vídeos e dicas relacionadas a saúde e bem-estar.
+- O sistema deve oferecer acesso a planos de treino e sugestões de atividades baseadas nas preferências e histórico do usuário.
+- O sistema deve oferecer a possibilidade de participar de desafios e competições dentro da plataforma para incentivar a atividade física e o engajamento.
+- O sistema deve enviar notificações aos usuários sobre atividades, desafios, eventos esportivos próximos e atualizações de amigos ou profissionais que eles seguem, para incentivá-los a manterem uma rotina ativa e saudável.
+- O sistema deve permitir o registro e a visualização de eventos esportivos locais e online, e a inscrição em eventos promovidos pela plataforma.
+- O sistema deve permitir o acompanhamento do status das rotinas de treinos e progressos dos usuários, incluindo a possibilidade de registrar e compartilhar experiências, metas alcançadas e interações com outros usuários.
+- O sistema deve garantir a segurança das informações pessoais e de saúde dos usuários, com acesso restrito, criptografia e controle de permissões de acesso a dados sensíveis.
+- O sistema deve ter uma interface de usuário amigável e intuitiva, para que os usuários possam acessar facilmente as funcionalidades, se conectar com outros membros e acompanhar suas rotinas sem dificuldade.
+- O sistema deve ter um desempenho satisfatório, com tempos de resposta rápidos, carregamento eficiente de conteúdos e estabilidade, sem interrupções ou falhas.
+- O sistema deve ser escalável para suportar um crescente número de usuários e interações, sem comprometer o desempenho ou a qualidade da experiência do usuário.
+- O sistema deve ser bem documentado e o código-fonte deve estar disponível para auditoria e manutenção futura, garantindo a continuidade e a possibilidade de melhorias no longo prazo.
+
