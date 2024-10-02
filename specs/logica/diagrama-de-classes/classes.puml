@@ -4,12 +4,6 @@ abstract class UsuarioDoSistema {
     - idUsuario: int
     - email: String
     # senha: String
-    + getIdUsuario() -> int
-    + setIdUsuario(id: int) -> void
-    + getEmail() -> String
-    + setEmail(email: String) -> void
-    + getSenha() -> String
-    + setSenha(senha: String) -> void
     + receberNotificacao(): void
 }
 
@@ -27,9 +21,8 @@ class Administrador extends UsuarioDoSistema {
 
 class UsuarioComum extends UsuarioDoSistema {
     - nome: String
-    + getNome() -> String
-    + setNome(novoNome: String) -> void
     + criarPerfil(objetivos: List<String>, atividades: List<Atividade>) -> Perfil
+    + criarConteudo(conteudo: String) -> Conteudo
     + criarEvento(nome: String, data: date, descricao: String) -> Evento
     + deletarEvento(eventoId: int) -> void
     + editarEvento(eventoId: int, nome: String, data: date, descricao: String) -> void
@@ -39,6 +32,7 @@ class UsuarioComum extends UsuarioDoSistema {
     + deletarComunidade(comunidadeId: int) -> void
     + editarComunidade(comunidadeId: int, nome: String, data: date, descricao: String) -> void
     + criarDesafio(nome: String, data: date, descricao: String) -> Desafio
+    + editarDesafio(nome: String, data: date, descricao: String) -> void
     + deletarDesafio(desafioId: int) -> void
     + editarComunidade(desafioId: int, nome: String, data: date, descricao: String) -> void
     + enviarMensagens(mensagem: String, destinatarioId: int): void
@@ -48,12 +42,9 @@ class UsuarioComum extends UsuarioDoSistema {
 class Profissional extends UsuarioComum {
     - especialidade: String
     - avaliacao: int
-    + criarConta(nome: String, email: String, senha: String, especialidade: String) -> Profissional
     + criarAnuncio(anuncio: String, valor: int, duracao: int) -> Anuncio
     + cancelarAnuncio(anuncio: Anuncio) -> void
     + personalizarPlanosTreino(usuario: UsuarioComum, plano: PlanoTreino) -> void
-    + getEspecialidade(): String
-    + setEspecialidade(especialidade: String): void
 }
 
 class Notificacao {
@@ -65,14 +56,14 @@ class Notificacao {
 class Perfil {
     - objetivos: List<String>
     - atividades: List<Atividade>
-    + criarPerfil(objetivos: List<String>, atividades: List<Atividade>) -> Perfil
-    + visualizarPerfil() -> void
+    + adicionarObjetivo(objetivo: String) -> void
+    + adicionarAtividade(atividade: Atividade) -> void
     + atualizarPerfil(objetivos: List<String>, atividades: List<Atividade>) -> void
     + acompanharProgresso() -> Progresso
     + criarAtividade(nome: String, data: date, duracao: int, intensidade: String) -> Atividade
     + deletarAtividade(atividadeId: int) -> void
     + editarAtividade(atividadeId: int, nome: String, data: date, duracao: int, intensidade: String) -> void
-    + visualizarPlanoTreino() -> PlantoTreino
+    + criarPlano(nome: String, atividades: List<Atividade>) -> PlanoTreino
 }
 
 class Atividade {
@@ -86,7 +77,6 @@ class PlanoTreino {
     - id: int
     - nome: String
     - atividades: List<Atividade>
-    + criarPlano(nome: String, atividades: List<Atividade>) -> PlanoTreino
     + atualizarPlano(nome: String, atividades: List<Atividade>) -> void
     + excluirPlano() -> void
 }
@@ -102,8 +92,6 @@ class Conteudo {
     - id: int
     - conteudo: String
     - autor: Usuario
-    + criarPost(conteudo: String) -> Conteudo
-    + visualizarPost() -> Conteudo
     + atualizarPost(conteudo: String) -> void
     + excluirPost() -> void
 }
@@ -113,8 +101,6 @@ class Comunidade {
     - nome: String
     - descricao: String
     - membros: List<Usuario>
-    + criarComunidade(nome: String, descricao: String) -> void
-    + visualizarComunidade() -> void
     + adicionarMembro(usuario: Usuario) -> void
     + removerMembro(usuario: Usuario) -> void
 }
@@ -125,8 +111,6 @@ class Desafio {
     - data: date
     - descricao: String
     - participantes: List<Usuario>
-    + criarDesafio(nome: String, data: date, descricao: String) -> void
-    + visualizarDesafio() -> void
     + adicionarParticipante(usuario: Usuario) -> void
     + removerParticipante(usuario: Usuario) -> void
 }
@@ -137,7 +121,6 @@ class Evento {
     - data: date
     - descricao: String
     + criarEvento(nome: String, data: date, descricao: String) -> void
-    + visualizarEvento() -> void
     + adicionarParticipante(usuario: Usuario) -> void
     + removerParticipante(usuario: Usuario) -> void
 }
@@ -148,7 +131,6 @@ class Anuncio {
     - valor: double
     - duracao: int
     + criarAnuncio(anuncio: String, valor: int, duracao: int) -> Anuncio
-    + visualizarAnuncio() -> void
     + atualizarAnuncio(anuncio: String, valor: int, duracao: int) -> void
     + excluirAnuncio() -> void
 }
