@@ -26,7 +26,7 @@ A visão lógica descreve a estrutura e organização do sistema, enfatizando co
 
 ## Diagrama de Classes
 
-![Classes](diagrama-de-classes/classes.png)
+![Classes](diagrama-de-classes/classes.svg)
 
 ## Diagrama de Pacotes
 
