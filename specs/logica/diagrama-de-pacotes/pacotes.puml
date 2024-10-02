@@ -1,0 +1,29 @@
+@startuml
+
+package Atores {
+    class UsuarioDoSistema
+    class Administrador extends UsuarioDoSistema
+    class UsuarioComum extends UsuarioDoSistema
+    class Profissional extends UsuarioComum
+}
+
+package Interacao {
+    class Notificacao 
+    class Conteudo
+    class Comunidade
+    class Anuncio
+}
+
+package AtividadesIndividuais {
+    class Atividade
+    class Perfil
+    class PlanoTreino
+    class Progresso
+}
+
+package AtividadesSociais {
+    class Evento
+    class Desafio
+}
+
+@enduml
