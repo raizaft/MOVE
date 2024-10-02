@@ -1,1 +1,168 @@
+@startuml
 
+abstract class UsuarioDoSistema {
+    - idUsuario: int
+    - email: String
+    # senha: String
+    + getIdUsuario() -> int
+    + setIdUsuario(id: int) -> void
+    + getEmail() -> String
+    + setEmail(email: String) -> void
+    + getSenha() -> String
+    + setSenha(senha: String) -> void
+    + receberNotificacao(): void
+}
+
+class Administrador extends UsuarioDoSistema {
+    + editarUsuario(id: int, novoNome: String) -> void
+    + deletarUsuario(id: int) -> void
+    + aprovarConteudo(conteudo: Conteudo) -> void
+    + editarConteudo(conteudo: Conteudo, novoTexto: String) -> void
+    + deletarConteudo(conteudo: Conteudo) -> void
+    + aprovarAnuncio(anuncio: Anuncio) -> void
+    + deletarAnuncio(anuncio: Anuncio) -> void
+    + configurarPermissoes(usuario: UsuarioDoSistema) -> void
+    + enviarNotificacoes(mensagem: String) -> Notificacao
+}
+
+class UsuarioComum extends UsuarioDoSistema {
+    - nome: String
+    + getNome() -> String
+    + setNome(novoNome: String) -> void
+    + criarPerfil(objetivos: List<String>, atividades: List<Atividade>) -> Perfil
+    + criarEvento(nome: String, data: date, descricao: String) -> Evento
+    + deletarEvento(eventoId: int) -> void
+    + editarEvento(eventoId: int, nome: String, data: date, descricao: String) -> void
+    + avaliarProfissional(idUsuario: int, nota: int, avaliacao: String) -> void
+    + participarComunidades(comunidadeId: int): void
+    + criarComunidade(nome: String, data: date, descricao: String) -> Comunidade
+    + deletarComunidade(comunidadeId: int) -> void
+    + editarComunidade(comunidadeId: int, nome: String, data: date, descricao: String) -> void
+    + criarDesafio(nome: String, data: date, descricao: String) -> Desafio
+    + deletarDesafio(desafioId: int) -> void
+    + editarComunidade(desafioId: int, nome: String, data: date, descricao: String) -> void
+    + enviarMensagens(mensagem: String, destinatarioId: int): void
+    + criarConta(nome: String, email: String, senha: String) -> UsuarioComum
+}
+
+class Profissional extends UsuarioComum {
+    - especialidade: String
+    - avaliacao: int
+    + criarConta(nome: String, email: String, senha: String, especialidade: String) -> Profissional
+    + criarAnuncio(anuncio: String, valor: int, duracao: int) -> Anuncio
+    + cancelarAnuncio(anuncio: Anuncio) -> void
+    + personalizarPlanosTreino(usuario: UsuarioComum, plano: PlanoTreino) -> void
+    + getEspecialidade(): String
+    + setEspecialidade(especialidade: String): void
+}
+
+class Notificacao {
+    - id: int
+    - mensagem: String
+    - data: Date
+}
+
+class Perfil {
+    - objetivos: List<String>
+    - atividades: List<Atividade>
+    + criarPerfil(objetivos: List<String>, atividades: List<Atividade>) -> Perfil
+    + visualizarPerfil() -> void
+    + atualizarPerfil(objetivos: List<String>, atividades: List<Atividade>) -> void
+    + acompanharProgresso() -> Progresso
+    + criarAtividade(nome: String, data: date, duracao: int, intensidade: String) -> Atividade
+    + deletarAtividade(atividadeId: int) -> void
+    + editarAtividade(atividadeId: int, nome: String, data: date, duracao: int, intensidade: String) -> void
+    + visualizarPlanoTreino() -> PlantoTreino
+}
+
+class Atividade {
+    - id: int
+    - nome: String
+    - duracao: int
+    - intensidade: String
+}
+
+class PlanoTreino {
+    - id: int
+    - nome: String
+    - atividades: List<Atividade>
+    + criarPlano(nome: String, atividades: List<Atividade>) -> PlanoTreino
+    + atualizarPlano(nome: String, atividades: List<Atividade>) -> void
+    + excluirPlano() -> void
+}
+
+class Progresso {
+    - usuario: Usuario
+    - atividadesCompletas: List<Atividade>
+    + visualizarProgresso() -> void
+    + atualizarProgresso(atividades: List<Atividade>) -> void
+}
+
+class Conteudo {
+    - id: int
+    - conteudo: String
+    - autor: Usuario
+    + criarPost(conteudo: String) -> Conteudo
+    + visualizarPost() -> Conteudo
+    + atualizarPost(conteudo: String) -> void
+    + excluirPost() -> void
+}
+
+class Comunidade {
+    - id: int
+    - nome: String
+    - descricao: String
+    - membros: List<Usuario>
+    + criarComunidade(nome: String, descricao: String) -> void
+    + visualizarComunidade() -> void
+    + adicionarMembro(usuario: Usuario) -> void
+    + removerMembro(usuario: Usuario) -> void
+}
+
+class Desafio {
+    - id: int
+    - nome: String
+    - data: date
+    - descricao: String
+    - participantes: List<Usuario>
+    + criarDesafio(nome: String, data: date, descricao: String) -> void
+    + visualizarDesafio() -> void
+    + adicionarParticipante(usuario: Usuario) -> void
+    + removerParticipante(usuario: Usuario) -> void
+}
+
+class Evento {
+    - id: int
+    - nome: String
+    - data: date
+    - descricao: String
+    + criarEvento(nome: String, data: date, descricao: String) -> void
+    + visualizarEvento() -> void
+    + adicionarParticipante(usuario: Usuario) -> void
+    + removerParticipante(usuario: Usuario) -> void
+}
+
+class Anuncio {
+    - id: int
+    - conteudo: String
+    - valor: double
+    - duracao: int
+    + criarAnuncio(anuncio: String, valor: int, duracao: int) -> Anuncio
+    + visualizarAnuncio() -> void
+    + atualizarAnuncio(anuncio: String, valor: int, duracao: int) -> void
+    + excluirAnuncio() -> void
+}
+
+UsuarioComum "1" -- "1" Perfil: possui
+Perfil "1" -- "1" Progresso: acompanha
+Perfil "1" -- "0..*" Atividade: possui
+Perfil "1" -- "0..*" PlanoTreino: possui
+UsuarioComum "1" -- "0..*" Conteudo: possui
+UsuarioComum "0..*" -- "0..*" Comunidade: participa de
+UsuarioComum "0..*" -- "0..*" Desafio: participa de
+UsuarioComum "0..*" -- "0..*" Evento: participa de
+Profissional "1" -- "0..*" Anuncio: possui
+UsuarioDoSistema "0..*" -- "0..*" Notificacao: recebe
+Administrador "1" -- "0..*" Notificacao: envia
+
+@enduml
